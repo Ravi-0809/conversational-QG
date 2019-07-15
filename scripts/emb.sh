@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-PYT=/research/king2/yfgao/envs/pyt0.4.1py3.6cuda9/bin/python
-DATA=/research/king3/yfgao/pd/conversational-QG/data
+PYT=/content/cuda-repo-ubuntu1604-9-2-local_9.2.148-1_amd64
+DATA=/content/conversational-QG/data
 
 cd code
 
