@@ -5,7 +5,7 @@
 from __future__ import division
 from functools import reduce
 import argparse
-import os
+import os, sys
 import random
 import torch
 import torchtext
@@ -19,6 +19,8 @@ from onmt.utils.optimizers import build_optim
 from onmt.trainer import build_trainer
 from onmt.models import build_model_saver
 from onmt.utils.logging import init_logger, logger
+
+sys.path.append(os.path.join(os.path.dirname(__file__), "tools"))
 
 
 def _check_save_model_path(opt):

@@ -1,14 +1,15 @@
 #!/usr/bin/env python
 
-from bleu.bleu import Bleu
+# from bleu_eval.bleu import Bleu
+from bleu import Bleu
 from meteor.meteor import Meteor
 from rouge.rouge import Rouge
 from collections import defaultdict
 from argparse import ArgumentParser
 
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+# reload(sys)
+# sys.setdefaultencoding('utf-8')
 
 class Eval:
     def __init__(self, gts, res):
@@ -63,7 +64,7 @@ def eval(out_file, tgt_file):
     for idx, (out_, tgt_) in enumerate(zip(out, tgt)):
         res[idx] = [out_.encode('utf-8')]
 
-        ## gts 
+        ## gts
         gts[idx] = [tgt_.encode('utf-8')]
 
     eval = Eval(gts, res)
@@ -77,5 +78,3 @@ if __name__ == "__main__":
 
     print ("scores: \n")
     eval(args.out_file, args.tgt_file)
-
-
