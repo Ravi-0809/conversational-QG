@@ -1,0 +1,19 @@
+[2019-07-15 23:07:29,137 INFO] From: /home/ubuntu/question_generation/conversational-QG/conversational-QG/data/processed/coqg.turn3.vocab.pt
+[2019-07-15 23:07:29,137 INFO] 	* source vocab: 59523 words
+[2019-07-15 23:07:29,137 INFO] 	* target vocab: 59523 words
+[2019-07-15 23:11:58,924 INFO] Got 2196007 encryption embeddings from /home/ubuntu/question_generation/conversational-QG/conversational-QG/data/glove.840B.300d.txt
+[2019-07-15 23:16:36,636 INFO] Got 2196007 decryption embeddings from /home/ubuntu/question_generation/conversational-QG/conversational-QG/data/glove.840B.300d.txt
+[2019-07-15 23:16:38,686 INFO] 
+Matching: 
+[2019-07-15 23:16:38,686 INFO] 	* enc: 47905 match, 11618 missing, (80.48%)
+[2019-07-15 23:16:38,686 INFO] 	* dec: 47905 match, 11618 missing, (80.48%)
+[2019-07-15 23:16:38,686 INFO] 
+Filtered embeddings:
+[2019-07-15 23:16:38,687 INFO] 	* enc: torch.Size([59523, 300])
+[2019-07-15 23:16:38,687 INFO] 	* dec: torch.Size([59523, 300])
+[2019-07-15 23:16:38,687 INFO] 
+Saving embedding as:
+	* enc: /home/ubuntu/question_generation/conversational-QG/conversational-QG/data/processed/vocab.glove.840B.300d.enc.pt
+	* dec: /home/ubuntu/question_generation/conversational-QG/conversational-QG/data/processed/vocab.glove.840B.300d.dec.pt
+[2019-07-15 23:16:38,893 INFO] 
+Done.

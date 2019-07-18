@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-PROJ=/content/conversational-QG
-PYT=/content/cuda-repo-ubuntu1604-9-2-local_9.2.148-1_amd64
+PROJ=/home/ubuntu/question_generation/conversational-QG/conversational-QG
+PYT=python
 
-export CUDA_VISIBLE_DEVICES=$1
+export CUDA_VISIBLE_DEVICES=0
 HISTORY_TURN=3
-DATE=$2
-MODEL_NAME=$3
+DATE=1
+MODEL_NAME=cqg
 LCV=1
 LCA=1
 LF=1
@@ -41,11 +41,12 @@ ${PYT} -u code/train_single.py \
         -batch_size=32 \
         -valid_steps=2000 \
         -valid_batch_size=16 \
-        -train_steps=20000 \
+        -train_steps=18200 \
         -optim=adagrad \
         -adagrad_accumulator_init=0.1 \
         -learning_rate=0.1 \
         -learning_rate_decay=0.5 \
         -start_decay_steps=10001 \
         -decay_steps=2000 \
-        -report_every=200
+        -report_every=200 \
+	-train_from=data/model/1_turn3_cqg_lcv_1_lca_1_lf1_lfh_1_step_18000.pt

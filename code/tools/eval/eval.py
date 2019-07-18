@@ -31,10 +31,10 @@ class Eval:
             score, scores = scorer.compute_score(self.gts, self.res)
             if type(method) == list:
                 for sc, scs, m in zip(score, scores, method):
-                    print "%s: %0.3f"%(m, sc * 100)
+                    print ("%s: %0.3f"%(m, sc * 100))
                     output.append(sc)
             else:
-                print "%s: %0.3f"%(method, score * 100)
+                print ("%s: %0.3f"%(method, score * 100))
                 output.append(score)
         return output
 
@@ -75,7 +75,7 @@ if __name__ == "__main__":
     parser.add_argument("-tgt", "--tgt_file", dest="tgt_file", default="../data/processed/tgt-test.txt", help="target file")
     args = parser.parse_args()
 
-    print "scores: \n"
+    print ("scores: \n")
     eval(args.out_file, args.tgt_file)
 
 
