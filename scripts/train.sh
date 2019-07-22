@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 PROJ=/home/ubuntu/question_generation/conversational-QG/cqg_without_coref/conversational-QG
+# PROJ=/Users/avaamo/workspace/conversational-QG
 PYT=python
 
-export CUDA_VISIBLE_DEVICES=1
+export CUDA_VISIBLE_DEVICES=0
 HISTORY_TURN=3
 DATE=2
 MODEL_NAME=cqg
@@ -23,10 +24,6 @@ ${PYT} -u code/train_single.py \
         -qa_sent_enc_layers=1 \
         -copy_attn \
         -reuse_copy_attn \
-        -coref_vocab \
-        -lambda_coref_vocab=${LCV} \
-        -coref_attn \
-        -lambda_coref_attn=${LCA} \
         -flow \
         -lambda_flow=${LF} \
         -flow_history \
@@ -35,7 +32,7 @@ ${PYT} -u code/train_single.py \
         -save_model=${PROJ}/data/model/${DATE}_turn${HISTORY_TURN}_${MODEL_NAME}_lcv_${LCV}_lca_${LCA}_lf${LF}_lfh_${LFH} \
         -save_checkpoint_steps=2000 \
         -keep_checkpoint=4 \
-        -gpuid=0 \
+        -gpuid=-1 \
         -pre_word_vecs_enc=${PROJ}/data/processed/vocab.glove.840B.300d.enc.pt \
         -pre_word_vecs_dec=${PROJ}/data/processed/vocab.glove.840B.300d.enc.pt \
         -batch_size=32 \
@@ -48,4 +45,8 @@ ${PYT} -u code/train_single.py \
         -learning_rate_decay=0.5 \
         -start_decay_steps=10001 \
         -decay_steps=2000 \
-        -report_every=200
+        -report_every=200 \
+        -lambda_coref_vocab=${LCV} \
+        -lambda_coref_attn=${LCA}
+        # -coref_attn \
+        # -coref_vocab 

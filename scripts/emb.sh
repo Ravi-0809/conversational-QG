@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 PYT=python
-DATA=/home/ubuntu/question_generation/conversational-QG/conversational-QGdata
+DATA=/home/ubuntu/question_generation/conversational-QG/cqg_without_coref/conversational-QG/data
 
 cd code
 

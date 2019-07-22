@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-PROJ=/home/ubuntu/question_generation/conversational-QG/conversational-QG
+PROJ=/home/ubuntu/question_generation/conversational-QG/cqg_without_coref/conversational-QG
 PYT=python
 PYT2=python2
 
-export CUDA_VISIBLE_DEVICES=1
+export CUDA_VISIBLE_DEVICES=0
 HISTORY_TURN=3
 DATE=2
-MODEL_NAME=3
+MODEL_NAME=cqg
 LCV=1
 LCA=1
 LF=1
