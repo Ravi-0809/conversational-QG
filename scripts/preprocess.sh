@@ -9,8 +9,8 @@ mkdir -p ${DATA}/model
 mkdir -p ${DATA}/pred
 
 ${PYT} code/preprocess.py \
-        -train_dir=${DATA}/coqg-train-3.json \
-        -valid_dir=${DATA}/coqg-dev-3.json \
+        -train_dir=${DATA}/coqg_data/coqg-train-3.json \
+        -valid_dir=${DATA}/coqg_data/coqg-dev-3.json \
         -save_data=${DATA}/processed/coqg.turn3 \
         -data_type=concat \
         -dynamic_dict \

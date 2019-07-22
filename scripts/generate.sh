@@ -16,7 +16,7 @@ N_STEP=4
 
 ${PYT} -u code/translate.py \
         -model=${PROJ}/data/model/${DATE}_turn${HISTORY_TURN}_${MODEL_NAME}_lcv_${LCV}_lca_${LCA}_lf${LF}_lfh_${LFH}_step_${N_STEP}.pt \
-        -data=${PROJ}/data/coqg-test-${HISTORY_TURN}.json \
+        -data=${PROJ}/data/coqg_data/coqg-test-${HISTORY_TURN}.json \
         -output=${PROJ}/data/pred/${DATE}_turn${HISTORY_TURN}_${MODEL_NAME}_lcv${LCV}_lca_${LCA}_lf${LF}_lfh_${LFH}_step_${N_STEP}_test.txt \
         -dynamic_dict \
         -share_vocab \
@@ -27,4 +27,4 @@ ${PYT} -u code/translate.py \
 
 ${PYT2} -u ${PROJ}/code/tools/eval/eval.py \
         -out=${PROJ}/data/pred/${DATE}_turn${HISTORY_TURN}_${MODEL_NAME}_lcv${LCV}_lca_${LCA}_lf${LF}_lfh_${LFH}_step_${N_STEP}_test.txt \
-        -tgt=${PROJ}/data/coqg-test-tgt-3.txt
+        -tgt=${PROJ}/data/coqg_data/coqg-test-tgt-3.txt
