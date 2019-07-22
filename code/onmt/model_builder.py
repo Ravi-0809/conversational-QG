@@ -158,10 +158,10 @@ def build_base_model(model_opt, fields, gpu, checkpoint=None):
         )
         if model_opt.share_decoder_embeddings:
             generator[0].weight = decoder.embeddings.word_lut.weight
-    elif model_opt.coref_vocab or model_opt.coref_attn:
-        generator = CorefGenerator(model_opt.dec_rnn_size,
-                                   fields["tgt"].vocab,
-                                   fields["coref_tgt"].vocab)
+    # elif model_opt.coref_vocab or model_opt.coref_attn:
+    #     generator = CorefGenerator(model_opt.dec_rnn_size,
+    #                                fields["tgt"].vocab,
+    #                                fields["coref_tgt"].vocab)
     else:
         generator = CopyGenerator(model_opt.dec_rnn_size,
                                   fields["tgt"].vocab)

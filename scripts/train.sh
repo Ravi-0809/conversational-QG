@@ -47,5 +47,5 @@ ${PYT} -u code/train_single.py \
         -start_decay_steps=10001 \
         -decay_steps=2000 \
         -report_every=200 
-#	-coref_vocab \
-#	-coref_attn 
+	-coref_vocab \
+	-coref_attn
