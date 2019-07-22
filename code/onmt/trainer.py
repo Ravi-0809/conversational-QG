@@ -139,14 +139,14 @@ class Trainer(object):
                 #     step, train_steps,
                 #     self.optim.learning_rate,
                 #     report_stats)
-
-                print(step)
+                if step % 100 == 0:
+                    (step)
 
                 if step % valid_steps == 0:
                     torch.cuda.empty_cache()
-                    valid_stats = self.validate(data_iter("valid"))
-                    self._report_step(self.optim.learning_rate,
-                                      step, valid_stats=valid_stats)
+                    # valid_stats = self.validate(data_iter("valid"))
+                    # self._report_step(self.optim.learning_rate,
+                    #                   step, valid_stats=valid_stats)
 
                 self._maybe_save(step)
                 step += 1

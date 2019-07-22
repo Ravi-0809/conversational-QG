@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-PROJ=/home/ubuntu/question_generation/conversational-QG/cqg_without_coref/conversational-QG
+# PROJ=/home/ubuntu/question_generation/conversational-QG/cqg_without_coref/conversational-QG
+PROJ=/Users/avaamo/workspace/conversational-QG
 PYT=python
-DATA=/home/ubuntu/question_generation/conversational-QG/cqg_without_coref/conversational-QG/data
+# DATA=/home/ubuntu/question_generation/conversational-QG/cqg_without_coref/conversational-QG/data
+DATA=/Users/avaamo/workspace/conversational-QG/data
 
 mkdir -p ${DATA}/processed
 mkdir -p ${DATA}/model
