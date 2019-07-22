@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-PROJ=/home/ubuntu/question_generation/conversational-QG/conversational-QG
+PROJ=/home/ubuntu/question_generation/conversational-QG/cqg_without_coref/conversational-QG
 PYT=python
 
 export CUDA_VISIBLE_DEVICES=1
 HISTORY_TURN=3
 DATE=2
-MODEL_NAME=3
+MODEL_NAME=cqg
 LCV=1
 LCA=1
 LF=1
@@ -23,10 +23,8 @@ ${PYT} -u code/train_single.py \
         -qa_sent_enc_layers=1 \
         -copy_attn \
         -reuse_copy_attn \
-        # -coref_vocab \
-        # -lambda_coref_vocab=${LCV} \
-        # -coref_attn \
-        # -lambda_coref_attn=${LCA} \
+        -lambda_coref_vocab=${LCV} \
+        -lambda_coref_attn=${LCA} \
         -flow \
         -lambda_flow=${LF} \
         -flow_history \
@@ -48,4 +46,6 @@ ${PYT} -u code/train_single.py \
         -learning_rate_decay=0.5 \
         -start_decay_steps=10001 \
         -decay_steps=2000 \
-        -report_every=200
+        -report_every=200 
+#	-coref_vocab \
+#	-coref_attn 
