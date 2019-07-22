@@ -135,10 +135,12 @@ class Trainer(object):
                     batch, batch.batch_size, total_stats,
                     report_stats)
 
-                report_stats = self._maybe_report_training(
-                    step, train_steps,
-                    self.optim.learning_rate,
-                    report_stats)
+                # report_stats = self._maybe_report_training(
+                #     step, train_steps,
+                #     self.optim.learning_rate,
+                #     report_stats)
+
+                print(step)
 
                 if step % valid_steps == 0:
                     torch.cuda.empty_cache()
