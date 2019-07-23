@@ -234,10 +234,10 @@ def build_vocab(train_dataset, data_type, fields, share_vocab,
                        min_freq=tgt_words_min_frequency)
     logger.info(" * tgt vocab size: %d." % len(fields["tgt"].vocab))
 
-    _build_field_vocab(fields["coref_tgt"], counter["coref_tgt"],
-                       max_size=tgt_vocab_size,
-                       min_freq=tgt_words_min_frequency)
-    logger.info(" * coref tgt vocab size: %d." % len(fields["coref_tgt"].vocab))
+    # _build_field_vocab(fields["coref_tgt"], counter["coref_tgt"],
+    #                    max_size=tgt_vocab_size,
+    #                    min_freq=tgt_words_min_frequency)
+    # logger.info(" * coref tgt vocab size: %d." % len(fields["coref_tgt"].vocab))
 
     # here we only use src as the source
     # we will copy the vocabulary to others for sharing the source vocab
