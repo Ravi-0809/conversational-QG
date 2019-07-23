@@ -602,9 +602,14 @@ class Translator(object):
                 # beam x tgt_vocab
                 beam_attn = unbottle(attn["std"])
             else:
-                out, _ = self.model.generator.forward(dec_out,
+                # out, _ = self.model.generator.forward(dec_out,
+                #                                    attn["copy"].squeeze(0),
+                #                                    src_map)
+
+                out = self.model.generator.forward(dec_out,
                                                    attn["copy"].squeeze(0),
                                                    src_map)
+
                 # beam x (tgt_vocab + extra_vocab)
                 out = data.collapse_copy_scores(
                     unbottle(out.data),
