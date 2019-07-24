@@ -70,7 +70,7 @@ def load_fields_from_vocab(vocab, data_type="text"):
     return fields
 
 
-def save_fields_fto_vocab(fields):
+def save_fields_to_vocab(fields):
     """
     Save Vocab objects in Field objects to `vocab.pt` file.
     """
