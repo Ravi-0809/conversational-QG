@@ -135,18 +135,20 @@ class Trainer(object):
                     batch, batch.batch_size, total_stats,
                     report_stats)
 
-                report_stats = self._maybe_report_training(
-                    step, train_steps,
-                    self.optim.learning_rate,
-                    report_stats)
-                # if step % 100 == 0:
-                #     print(step)
+                # report_stats = self._maybe_report_training(
+                #     step, train_steps,
+                #     self.optim.learning_rate,
+                #     report_stats)
 
-                if step % valid_steps == 0:
-                    torch.cuda.empty_cache()
-                    valid_stats = self.validate(data_iter("valid"))
-                    self._report_step(self.optim.learning_rate,
-                                      step, valid_stats=valid_stats)
+
+                if step % 100 == 0:
+                    logger.info(step)
+
+                # if step % valid_steps == 0:
+                #     torch.cuda.empty_cache()
+                #     valid_stats = self.validate(data_iter("valid"))
+                #     self._report_step(self.optim.learning_rate,
+                #                       step, valid_stats=valid_stats)
 
                 self._maybe_save(step)
                 step += 1
