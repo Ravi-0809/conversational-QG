@@ -135,18 +135,18 @@ class Trainer(object):
                     batch, batch.batch_size, total_stats,
                     report_stats)
 
-                # report_stats = self._maybe_report_training(
-                #     step, train_steps,
-                #     self.optim.learning_rate,
-                #     report_stats)
-                if step % 100 == 0:
-                    print(step)
+                report_stats = self._maybe_report_training(
+                    step, train_steps,
+                    self.optim.learning_rate,
+                    report_stats)
+                # if step % 100 == 0:
+                #     print(step)
 
                 if step % valid_steps == 0:
                     torch.cuda.empty_cache()
-                    # valid_stats = self.validate(data_iter("valid"))
-                    # self._report_step(self.optim.learning_rate,
-                    #                   step, valid_stats=valid_stats)
+                    valid_stats = self.validate(data_iter("valid"))
+                    self._report_step(self.optim.learning_rate,
+                                      step, valid_stats=valid_stats)
 
                 self._maybe_save(step)
                 step += 1
@@ -218,7 +218,9 @@ class Trainer(object):
 
             self._comb_src_qa_map(batch)
 
-            self._coref_attn_target(batch)
+
+            ## --------- Commented for testing wihtout coref ---------
+            # self._coref_attn_target(batch)
 
             outputs, attns, _ = self._forward_prop(batch)
 
@@ -305,7 +307,8 @@ class Trainer(object):
 
         self._comb_src_qa_map(batch)
 
-        self._coref_attn_target(batch)
+        ## --------- Commented for testing wihtout coref ---------
+        # self._coref_attn_target(batch)
 
         outputs, attns, dec_state = self._forward_prop(batch)
 
