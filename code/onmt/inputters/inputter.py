@@ -56,6 +56,11 @@ def load_fields_from_vocab(vocab, data_type="text"):
     n_qa_features = len(collect_features(vocab, 'qa'))
     n_tgt_features = len(collect_features(vocab, 'tgt'))
     fields = get_fields(n_src_features, n_qa_features, n_tgt_features, data_type)
+    ## --------- Removed for testing without coref gen ----------
+    fields.pop('coref_tgt')
+    fields.pop('coref_score')
+    fields.pop('coref_attn')
+
     for k, v in vocab.items():
         # Hack. Can't pickle defaultdict :(
         v.stoi = defaultdict(lambda: 0, v.stoi)
@@ -65,7 +70,7 @@ def load_fields_from_vocab(vocab, data_type="text"):
     return fields
 
 
-def save_fields_to_vocab(fields):
+def save_fields_fto_vocab(fields):
     """
     Save Vocab objects in Field objects to `vocab.pt` file.
     """
