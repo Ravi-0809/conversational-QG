@@ -47,6 +47,7 @@ ${PYT} -u code/train_single.py \
         -decay_steps=200 \
         -report_every=20 \
         -lambda_coref_vocab=${LCV} \
-        -lambda_coref_attn=${LCA} 
+        -lambda_coref_attn=${LCA} \
+        -generator_function=sparsemax
         # -coref_attn \
         # -coref_vocab 

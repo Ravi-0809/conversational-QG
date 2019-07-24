@@ -140,7 +140,7 @@ class Trainer(object):
                 #     self.optim.learning_rate,
                 #     report_stats)
                 if step % 100 == 0:
-                    (step)
+                    print(step)
 
                 if step % valid_steps == 0:
                     torch.cuda.empty_cache()
