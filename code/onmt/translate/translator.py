@@ -33,8 +33,7 @@ def build_translator(opt, report_score=True, logger=None, out_file=None):
     fields, model, model_opt = \
         onmt.model_builder.load_test_model(opt, dummy_opt.__dict__)
 
-    logger.info('the fields are : ')
-    logger.info(fields)
+    print('the fields are : ', fields)
 
     scorer = onmt.translate.GNMTGlobalScorer(opt.alpha,
                                              opt.beta,
