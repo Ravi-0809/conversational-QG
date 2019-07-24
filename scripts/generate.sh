@@ -17,9 +17,8 @@ N_STEP=2000
 
 ${PYT} -u code/translate.py \
         -model=${PROJ}/data/model/${DATE}_turn${HISTORY_TURN}_${MODEL_NAME}_lcv_${LCV}_lca_${LCA}_lf${LF}_lfh_${LFH}_step_${N_STEP}.pt \
-        # -data=${PROJ}/data/coqg_data/coqg-test-${HISTORY_TURN}.json \
-        -data=${PROJ}/data/coqg_data/test_json.json
-        -output=${PROJ}/data/pred/one_json_${DATE}_turn${HISTORY_TURN}_${MODEL_NAME}_lcv${LCV}_lca_${LCA}_lf${LF}_lfh_${LFH}_step_${N_STEP}_test.txt \
+        -data=${PROJ}/data/coqg_data/test_json.json \
+        -output=${PROJ}/data/pred/one_para_${DATE}_turn${HISTORY_TURN}_${MODEL_NAME}_lcv${LCV}_lca_${LCA}_lf${LF}_lfh_${LFH}_step_${N_STEP}_test.txt \
         -dynamic_dict \
         -share_vocab \
         -block_ngram_repeat=1 \
